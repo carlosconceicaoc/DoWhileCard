@@ -1,19 +1,82 @@
+* {
+  margin: 0;
+}
+
 html,
 body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+  --gray-neutral: hsl(240, 7%, 78%);
+
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Suaviza a fonte */
   height: 100%;
 }
 
 body {
   display: grid;
-  background-color: lightblue;
   place-items: center;
 }
 
+main {
+  background: url(images/background.png);
+  color: var(--gray);
+  height: 812px;
+  text-align: center;
+  width: 375px;
+}
+
 h1 {
+  font-weight: 700;
   font-size: 1.5rem;
 }
 
 a {
+  align-items: center;
   color: black;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0.25rem;
   text-decoration: none;
+  color: var(--gray);
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  list-style: none;
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 250px;
+}
+
+.avatar {
+  margin: 11.5rem auto 1.5rem;
+  position: relative; /* Elemento avatar passa a ser a orientação para o elemento filho (passa a ser o limite) */
+  width: 10rem;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  z-index: 1;
+}
+
+.avatar > img {
+  height: 11.5rem;
+  /* https://bennettfeely.com/clippy/ */
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  object-fit: cover;
+  width: 10rem;
 }
