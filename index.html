@@ -25,52 +25,65 @@
         </div>
 
         <h1>Carlos Conceição</h1>
-        <a class="github" href="https://instagram.com/santiagokadu">
+        <a
+          class="github"
+          href="https://github.com/carlosconceicaoc"
+          target="_blank"
+        >
           <img src="images/icon-github.svg" alt="Ícone github" />
           carlosconceicaoc
         </a>
         <!-- Parágrafo -->
         <p>An instructor focused on helping pople start programming for web</p>
         <!-- Ícones sociais -->
-        <ul>
-          <li>
-            <a href="">
-              <img
-                src="images/icon-youtube.svg"
-                alt="Ícone youtube"
-                target="_blank"
-              />
+        <ul id="socialLinks">
+          <li class="facebook">
+            <a
+              href="https://facebook.com/carloseduardosconceicao"
+              target="_blank"
+            >
+              <img src="images/icon-facebook.svg" alt="Ícone facebook" />
             </a>
           </li>
-          <li>
-            <a href="https://instagram.com/santiagokadu">
-              <img
-                src="images/icon-instagram.svg"
-                alt="Ícone instagram"
-                target="_blank"
-              />
+          <li class="instagram">
+            <a href="https://instagram.com/santiagokadu" target="_blank">
+              <img src="images/icon-instagram.svg" alt="Ícone instagram" />
             </a>
           </li>
-          <li>
-            <a href="https://facebook.com/carloseduardosconceicao">
-              <img
-                src="images/icon-facebook.svg"
-                alt="Ícone facebook"
-                target="_blank"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/santiagokadu">
-              <img
-                src="images/icon-twitter.svg"
-                alt="Ícone twitter"
-                target="_blank"
-              />
+          <li class="twitter">
+            <a href="https://twitter.com/santiagokadu" target="_blank">
+              <img src="images/icon-twitter.svg" alt="Ícone twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+    <script>
+      // camalCase
+      // PascalCase
+      // snake_case
+      const linksSocialMedia = {
+        github: 'carlosconceicaoc',
+        facebook: 'carloseduardosconceicao',
+        instagram: 'santiagokadu',
+        twitter: 'santiagokadu'
+      }
+
+      function changeSocialMedia() {
+        let github = document.getElementsByClassName('github')[0]
+        github.href = `https://${github.getAttribute('class')}.com/${
+          linksSocialMedia['github']
+        }`
+
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+          const urlSocialMedia = linksSocialMedia[social]
+
+          li.children[0].href = `https://${social}.com/${urlSocialMedia}`
+        }
+      }
+
+      changeSocialMedia()
+    </script>
   </body>
 </html>
