@@ -8,9 +8,9 @@ body {
   --gray: hsl(240, 9%, 89%);
   --gray-neutral: hsl(240, 7%, 78%);
 
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased; /* Suaviza a fonte */
-  height: 100%;
 }
 
 body {
@@ -19,11 +19,10 @@ body {
 }
 
 main {
-  background: url(images/background.png);
-  color: var(--gray);
-  height: 812px;
-  text-align: center;
-  width: 375px;
+  background: url(images/background.png) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
 }
 
 h1 {
@@ -63,6 +62,7 @@ ul {
 .container {
   margin: 0 auto;
   max-width: 250px;
+  text-align: center;
 }
 
 .avatar {
